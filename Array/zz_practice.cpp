@@ -1,45 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> OptmialSolution(vector<int> &a1, vector<int> &a2)
+int OptmialSolution(vector<int> &a)
 {
-    vector<int> ans;
-    int i = 0;
-    int j = 0;
-    int n1 = a1.size();
-    int n2 = a2.size();
-    while (i < n1 && j < n2)
+    map<int, int> mpp;
+    for (int i = 0; i < a.size(); i++)
     {
-        if (a1[i] < a2[j])
+        mpp[a[i]]++;
+    }
+    for (auto it : mpp)
+    {
+        if (it.second > a.size() / 2)
         {
-            i++;
-        }
-        else if (a1[i] > a2[j])
-        {
-            j++;
-        }
-        else
-        {
-            if (ans.empty() || ans.back() != a1[i])
-            {
-                ans.push_back(a1[i]);
-            }
-            i++;
-            j++;
+            return it.first;
         }
     }
-
-    return ans;
+    return -1;
 }
 
 int main()
 {
-    vector<int> a1 = {1, 2, 3, 4, 5, 6};
-    vector<int> a2 = {5, 6, 7, 8};
-    vector<int> ans = OptmialSolution(a1, a2);
-    for (auto it : ans)
-    {
-        cout << it << " ";
-    }
+    vector<int> a = {1, 1, 1, 2, 3};
+    int maj = OptmialSolution(a);
+    cout << "Majority element " << maj;
     return 0;
 }
