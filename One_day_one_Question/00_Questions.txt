@@ -1,0 +1,135 @@
+1. The City of Silent Sensors
+
+A city deploys N sensors in a straight line, each reporting an integer value every minute. Due to a firmware defect, inactive sensors report 0, while active sensors report positive or negative values depending on signal drift.
+The city controller wants to reorganize the data stream in-place so that all inactive sensors are pushed to the end, while preserving the relative order of all active sensors.
+
+However, after reorganization, the controller must also determine the maximum cumulative signal strength that can be obtained by choosing one continuous block of sensors before the inactive zone begins.
+
+If all sensors are inactive, return 0.
+
+You are not allowed to:
+
+Use extra arrays
+
+Traverse the array more than once meaningfully
+
+Reorder active sensors
+
+Return only the maximum cumulative signal strength.
+
+This problem looks simple until you realize the second requirement depends on the first in a non-trivial way.
+
+----------------------------------------------------------------------------------------------------------------
+
+2. The Archivist’s Corrupted Ledger
+
+An archivist stores historical event IDs in an array of size N.
+The ledger is supposed to contain unique positive IDs, but corruption has caused:
+
+Exactly one ID to appear more than half the time
+
+Several IDs to appear exactly once
+
+The array order to be completely arbitrary
+
+The archivist wants to verify the dominant ID, but only after filtering the ledger so that:
+
+All duplicate entries except one are logically ignored
+
+No extra memory proportional to N is used
+
+After verification, the archivist also wants to know whether removing any single contiguous block of entries could result in the dominant ID losing its dominance.
+
+Return:
+
+The dominant ID
+
+true or false based on whether such a block exists
+
+This problem is a trap for anyone who only memorized solutions instead of understanding why they work.
+
+----------------------------------------------------------------------------------------------------------------
+
+3. The Expedition with Limited Supplies
+
+An expedition moves through checkpoints represented by an array. Each checkpoint either adds or consumes supplies (positive or negative integers).
+
+The leader is allowed to choose exactly one continuous route.
+The expedition fails immediately if supplies ever drop below zero during the route.
+
+Your task is to determine the maximum total supplies the expedition can end with, assuming the leader chooses the route optimally.
+
+Constraints:
+
+The route must be non-empty
+
+Intermediate failure is not allowed
+
+Skipping checkpoints is not allowed
+
+Return the maximum achievable supplies.
+
+Many will try brute force.
+Few will realize why that approach collapses under constraints.
+
+----------------------------------------------------------------------------------------------------------------
+
+4. The Signal Reconfiguration Protocol
+
+A defense system receives a signal stream consisting only of three possible states represented as integers.
+The system must reconfigure the stream so that:
+
+All low-priority states appear first
+
+Followed by medium-priority
+
+Then high-priority
+
+However, the system also monitors transition instability, defined as the number of indices where signal[i] != signal[i+1].
+
+Your task is to reorder the stream in-place such that:
+
+Priority order is satisfied
+
+Transition instability is minimized
+
+Return the minimum possible instability after optimal reconfiguration.
+
+Ordering alone is not enough.
+You must think about structure, not just placement.
+
+----------------------------------------------------------------------------------------------------------------
+
+5. The Trader Who Could Not Afford Mistakes
+
+A trader observes price changes over N days.
+He may perform at most one buy and one sell, but with an added constraint:
+
+If the price drops below the buy price at any intermediate day after buying, the trade is automatically cancelled and considered invalid.
+
+The trader wants to maximize profit under this rule.
+
+Return the maximum profit possible.
+
+This is not the textbook problem.
+The constraint subtly destroys naïve logic.
+
+----------------------------------------------------------------------------------------------------------------
+
+6. The Lost Chronology of Numbers
+
+A historian discovers a sequence of integers where:
+
+Numbers may appear in any order
+
+Some numbers may be missing
+
+No number appears more than once
+
+The historian believes the sequence hides multiple time chains, where a time chain is defined as a set of numbers that can be rearranged to form consecutive values with no gaps.
+
+However, due to degradation, the historian is allowed to remove at most one number from the sequence to reveal the longest possible time chain.
+
+Return the length of the longest chain achievable.
+
+This problem punishes anyone who doesn’t fully understand what “consecutive” really means at scale.
