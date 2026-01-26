@@ -1,27 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int OptmialSolution(vector<int> &a)
+void reversed(vector<int> &a, int begin, int end)
 {
-    map<int, int> mpp;
-    for (int i = 0; i < a.size(); i++)
+    int i = begin;
+    int j = end;
+    while (i < j)
     {
-        mpp[a[i]]++;
+        swap(a[i], a[j]);
+        i++;
+        j--;
     }
-    for (auto it : mpp)
-    {
-        if (it.second > a.size() / 2)
-        {
-            return it.first;
-        }
-    }
-    return -1;
 }
 
 int main()
 {
-    vector<int> a = {1, 1, 1, 2, 3};
-    int maj = OptmialSolution(a);
-    cout << "Majority element " << maj;
+    vector<int> a = {1, 2, 3, 4};
+    reversed(a, 0, a.size() - 1);
+    for (auto it : a)
+    {
+        cout << it << " ";
+    }
     return 0;
 }
