@@ -1,0 +1,220 @@
+🔹 Input / Arrangement Words
+arbitrary
+
+No order, no pattern
+
+Worst-case arrangement possible
+
+You cannot assume anything about positions
+
+unsorted
+
+Not increasing or decreasing
+
+Sorting is not given, but may be allowed (unless restricted)
+
+distinct
+
+All elements are different
+
+No duplicates exist
+
+unique
+
+Appears exactly once
+
+Same as “distinct” in most problems
+
+stable
+
+Relative order must be preserved
+
+Often applies to sorting or transformations
+
+🔹 Subarray / Subsequence Traps
+contiguous
+
+Elements must be next to each other
+
+Usually implies sliding window or two pointers
+
+subarray
+
+Always contiguous
+
+[l … r]
+
+subsequence
+
+Order preserved
+
+Not necessarily contiguous
+
+substring
+
+Contiguous part of a string
+
+Same idea as subarray, but for strings
+
+🔹 Quantity & Logic Traps
+at least
+
+≥ (greater than or equal to)
+
+at most
+
+≤ (less than or equal to)
+
+exactly
+
+Equality, no flexibility
+
+strictly
+
+No equality allowed
+Example:
+
+strictly greater → >
+
+strictly increasing → no duplicates
+
+dominant / majority
+
+Appears more than n/2 times
+
+Not “most frequent”, but mathematical majority
+
+🔹 Possibility / Decision Words
+exists
+
+At least one valid case
+
+YES / NO question
+
+could result in
+
+Is it possible?
+
+Existence check, not guarantee
+
+any
+
+Even one valid case is enough
+
+all
+
+Must work for every case
+
+Stronger requirement than “any”
+
+🔹 Constraints & Optimization Words
+no extra memory proportional to N
+
+Space must be O(1)
+
+No arrays, maps, sets, vectors
+
+in-place
+
+Modify input directly
+
+No auxiliary storage
+
+single pass
+
+Only one traversal allowed
+
+Usually streaming logic
+
+amortized
+
+Average cost over many operations
+
+Individual steps may be expensive
+
+optimal
+
+Best possible under given constraints
+
+Often means lowest time or space complexity
+
+tight bound
+
+Exact complexity (Θ), not just upper bound
+
+🔹 Time / Space Complexity Traps
+efficient
+
+Context-dependent
+
+Usually means better than brute force
+
+worst case
+
+Most unfavorable input arrangement
+
+average case
+
+Expected performance over all inputs
+
+constant time
+
+O(1)
+
+Does not depend on input size
+
+linear / logarithmic
+
+Linear → O(n)
+
+Logarithmic → O(log n)
+
+🔹 Data Handling Words
+filter
+
+Remove irrelevant data logically
+
+Not necessarily deleting elements
+
+normalize
+
+Convert to standard form
+
+Simplify comparison or logic
+
+verify
+
+Do not assume
+
+Must check correctness explicitly
+
+streaming
+
+Process elements one by one
+
+Cannot store entire input
+
+🔹 Mathematical / Proof Traps
+guaranteed
+
+Always true
+
+You may rely on it
+
+invariant
+
+Condition that remains true
+
+Often used in loop reasoning
+
+sufficient
+
+Enough to satisfy condition
+
+Not necessarily required
+
+necessary
+
+Must be true
+
+But may not be enough alone

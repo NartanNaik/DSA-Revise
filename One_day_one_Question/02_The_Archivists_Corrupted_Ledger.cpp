@@ -28,27 +28,88 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool Solution(vector<int>& a, int dom) {
-    int N = a.size();
-    int F = 0;
-    for (int x : a)
-        if (x == dom) F++;
+// A structure is a user-defined data type that groups variables of different types under a single name
+struct Result {
+    int dominantID;
+    bool canBeBroken;
+    int left;   
+    int right;
+};
 
-    int threshold = 2 * F - N;
+Result analyzeLedger(const vector<int>& a)
+{
+    // TC => O(N)+O(N*N) (almost, because "needed" never be n)
 
-    int curr = 0, best = INT_MIN;
+    int candidate = -1, count = 0;
+
+    // Boyer–Moore
     for (int x : a) {
-        int val = (x == dom) ? 1 : -1;
-        curr = max(val, curr + val);
-        best = max(best, curr);
+        if (count == 0) {
+            candidate = x;
+            count = 1;
+        } else if (x == candidate) {
+            count++;
+        } else {
+            count--;
+        }
     }
 
-    return best >= threshold;
-}
+    int total = 0;
+    for (int x : a)
+        if (x == candidate) total++;
 
+    int n = a.size();
+
+    bool canBeBroken = false;
+    int L = -1, R = -1;
+
+    int needed = total - (n / 2);
+
+    int windowCount = 0;
+    int left = 0;
+
+    for (int right = 0; right < n; right++) {
+        if (a[right] == candidate)
+            windowCount++;
+
+        while (windowCount >= needed) {
+            int removedSize = right - left + 1;
+            int remainingSize = n - removedSize;
+            int remainingDominant = total - windowCount;
+
+            if (remainingDominant * 2 <= remainingSize) {
+                canBeBroken = true;
+                L = left;
+                R = right;
+                break;
+            }
+
+            if (a[left] == candidate)
+                windowCount--;
+            left++;
+        }
+
+        if (canBeBroken) break;
+    }
+
+    return {candidate, canBeBroken, L, R};
+}
 
 int main()
 {
-    vector<int> a = {1, 2, 3, 4, 1, 1, 1};
+    vector<int> a = {1,2,3,4,4,4,4};
+
+    Result res = analyzeLedger(a);
+
+    cout << "Dominant ID: " << res.dominantID << endl;
+
+    if (res.canBeBroken) {
+        cout << "Dominance can be broken by removing block ["
+             << res.left << ", " << res.right << "]" << endl;
+    } else {
+        cout << "Dominance cannot be broken" << endl;
+    }
+
     return 0;
 }
+
