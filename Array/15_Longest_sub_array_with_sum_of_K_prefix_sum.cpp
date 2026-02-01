@@ -91,7 +91,7 @@ int OptimalSolution(vector<int> a, int k)
 {
     // TC = O(N)
     // SC = O(1)
-    // Here we are using two pointer approach and this will only works where there is not negative elements in the array
+    // Here we are using two pointer approach and this will only works where there is not negative elements in the array, and here we are using the concept of prefix sum
 
     int maxLen = 0;
     int i = 0;

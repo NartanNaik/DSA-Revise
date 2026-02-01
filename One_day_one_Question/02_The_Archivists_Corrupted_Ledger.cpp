@@ -38,8 +38,9 @@ struct Result {
 
 Result analyzeLedger(const vector<int>& a)
 {
-    // TC => O(N)+O(N*N) (almost, because "needed" never be n)
+    // here after finding the majority element with moores, we see that after removing the part of array whether the majority elements goes or not by comparing the remaining dominant * 2 with the remainig size if it's smaller or equals to it that means it's possible otherwise it's not possible, if it's not possible we increament the left by one and check again all the condition if the while loop is still the true for the present condition
 
+    // TC => O(N)+O(N*N) (almost, because "needed" never be n)
     int candidate = -1, count = 0;
 
     // Boyer–Moore
@@ -84,8 +85,9 @@ Result analyzeLedger(const vector<int>& a)
                 break;
             }
 
-            if (a[left] == candidate)
-                windowCount--;
+            // i am still figuring out that why do we need it
+            // if (a[left] == candidate)
+            //     windowCount--;
             left++;
         }
 
@@ -97,7 +99,7 @@ Result analyzeLedger(const vector<int>& a)
 
 int main()
 {
-    vector<int> a = {1,2,3,4,4,4,4};
+    vector<int> a = {1,2,1,1,3};
 
     Result res = analyzeLedger(a);
 

@@ -25,8 +25,8 @@ int main()
 {
     vector<int> a = {1, 2, 3, 4, 5, 5, 6, 7};
     int d = 3;
-    // BruteforceSolution(a, d);
-    OptmialSolution(a);
+    BruteforceSolution(a, d);
+    // OptmialSolution(a);
     for (auto it : a)
     {
         cout << it << " ";
