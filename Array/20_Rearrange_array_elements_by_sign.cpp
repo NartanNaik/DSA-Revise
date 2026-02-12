@@ -119,7 +119,7 @@ void BruteForSecond(vector<int> &a)
             a[2 * i + 1] = neg[i];
         }
         int index1 = pos.size() * 2;
-        for (int i = 0; i < a.size(); i++)
+        for (int i = pos.size(); i < neg.size(); i++)
         {
             a[index1] = neg[i];
             index1++;

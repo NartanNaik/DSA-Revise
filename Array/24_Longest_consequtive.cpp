@@ -93,6 +93,27 @@ int BetterSolution(vector<int> &a)
     return logest;
 }
 
+// My code (Better approach)
+int Solution(vector<int> &a)
+{
+    sort(a.begin(), a.end());
+    int cnt = 1, longest = 1;
+    for (int i = 0; i < a.size(); i++)
+    {
+        if (a[i + 1] == a[i] + 1)
+        {
+            cnt++;
+        }
+        else
+        {
+            longest = max(longest, cnt);
+            cnt = 1;
+        }
+    }
+    longest = max(longest, cnt);
+    return longest;
+}
+
 int OptimalSolution(vector<int> &a)
 {
     // TC = O(2N+N) => O(3N) where O(2N) for while loop because we are nearly iterating twice for each element, like when we get first element we chack for whether it's next elements are present or not in the array and O(N) for forLoop
@@ -106,7 +127,7 @@ int OptimalSolution(vector<int> &a)
     int longest = 1;
 
     // this will store the all the elements as it is
-    unordered_set<int> st;
+    unordered_set<int> st;    
     for (int i = 0; i < a.size(); i++)
     {
         st.insert(a[i]);
@@ -144,8 +165,8 @@ int main()
 {
     vector<int> a = {45, 46, 42, 1, 2, 5, 4};
     // int length = BruteforceSolution(a);
-    // int length = BetterSolution(a);
-    int length = OptimalSolution(a);
+    int length = BetterSolution(a);
+    // int length = OptimalSolution(a);
     cout << "The longest consequtive array's length is: " << length;
     return 0;
 }

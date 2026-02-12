@@ -49,7 +49,7 @@ bool BetterSolution(vector<int> &a, int t)
         {
             return true;
         }
-        // if the more is not in the mapp than add that more inside the map
+        // if the more is not in the map than add that more inside the map
         mpp[el] = i;
     }
 

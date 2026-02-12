@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> BruteforceSolution(vector<int> &a)
 {
-    // here we took the all the element in the set which only excepts the unique elements and we add it again in the array we got by doing this we get the unique element in the beginning of the array which we wanted and we also get the index which is like how many unique elements are there in the array
+    // here we took the all the element in the set which only excepts the unique elements and we add it again in the array we got, by doing this we get the unique element in the beginning of the array which we wanted and we also get the index which is like how many unique elements are there in the array
     // TC = O(NlogN)+N (if we return for index it self),  SC = O(N) because we are using hte set here
 
     set<int> st;

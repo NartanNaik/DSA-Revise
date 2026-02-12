@@ -12,7 +12,7 @@ vector<int> BruteforceSolution(vector<int> a)
         if (a[i] != 0)
         {
             temp.push_back(a[i]);
-        }
+        } 
     }
     for (int i = 0; i < temp.size(); i++)
     {

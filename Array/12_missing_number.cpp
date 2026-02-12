@@ -49,7 +49,7 @@ int BetterSolution(vector<int> &a, int n)
     // now traverse whole array and mark as 1 for all the elements in the array
     for (int i = 0; i < a.size(); i++)
     {
-        // the missing element in the array will not get 1 and that number still remains 0
+        // the missing element in the array will not get 1 and that number stil remains 0
         hash[a[i]] = 1;
     }
 

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// you have given an array and you have to first give the second permituation of it that means when you take a permutation os a array in asscending order, you have to look for the original array in that permutation and and have to return the next permutation of it and if the next permutation won't exist becuase it's appeared in the last permutation you have to return the first one
+// you have given an array and you have to first give the second permituation of it that means when you take a permutation of an array in asscending order, you have to look for the original array in that permutation and and have to return the next permutation of it and if the next permutation won't exist becuase it's appeared in the last permutation you have to return the first one
 
 // ex: a = {3,1,2} so it's permutation will be : 123, 132,213,231,312,321 so you have to return 321 and if the array was = {3,2,1} you have to return 123
 
@@ -68,7 +68,7 @@ vector<int> OptimalSolution(vector<int> &a)
 
 int main()
 {
-    vector<int> a = {3, 1, 2};
+    vector<int> a = {4,3,5,6};
     vector<int> ans = BetterSolution(a);
     cout << "Next permutation: ";
     for (auto it : ans)
