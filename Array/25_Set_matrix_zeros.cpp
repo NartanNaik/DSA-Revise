@@ -120,11 +120,17 @@ void OptimalSolution(vector<vector<int>> &mt)
         {
             if (mt[i][j] == 0)
             {
+                // marking row'th position as 0
                 mt[i][0] = 0;
+
+                // this means if the this is the first element and where the j is 0 then don't mark it because we are carrying seperate data structure for it (col0) which i have visulazied in the noteBook 
                 if (j != 0)
                 {
+                    // marking column's position as 0
                     mt[0][j] = 0;
                 }
+
+                // making the col0 as 0 if the first element is 0 as we discussed in the previous example
                 else
                 {
                     col0 = 0;

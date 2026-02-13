@@ -10,7 +10,7 @@ vector<vector<int>> BruteforceSolution(vector<vector<int>> &mt)
 
     // here we are figuring out what should be the correct position of the element in the matrix and keeping that in that position in the answer matrix.
 
-    // this work like [0][0] = [0][n-1] in the same way next will be => [0][1]=[1][n-1], [0][2]=[2][n-1] this is for the first row.. and those numbers are the position of the elements in the array
+    // this work like [0][0] = [0][n-1] in the same way next will be => [0][1] = [1][n-1], [0][2] = [2][n-1] this is for the first row.. and those numbers are the position of the elements in the array
 
     int n = mt.size();
     int m = mt[0].size();
